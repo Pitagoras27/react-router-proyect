@@ -8,6 +8,7 @@ import { Map as map } from 'immutable';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { BrowserRouter } from 'react-router-dom';
 // function logger({ getState, dispatch}) {
 //   return (next) => {
 //     return (action) => {
@@ -21,7 +22,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 // }
 
 
-const logger_ = ({getState, dispatch }) => next => action => {
+const logger_ = ({ getState, dispatch }) => next => action => {
   console.log('este es mi viejo estado', getState().toJS())
   console.log('vamos a enviar está acción', action);
   const value = next(action)
@@ -45,8 +46,13 @@ const homeContainer = document.getElementById('home-container')
 
 
 render(
-  <Provider store={store}>
-    <Home />
-  </Provider>
-, homeContainer);
+  <BrowserRouter
+    basename="/videos"
+  >
+    <Provider store={store}>
+      <Home />
+    </Provider>
+  </BrowserRouter>,
+  homeContainer
+);
 
