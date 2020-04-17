@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { render } from 'react-dom';
 import Home from '../pages/containers/home';
 import { Provider } from 'react-redux';
@@ -53,10 +53,10 @@ render(
     basename="/videos"
   >
     <Provider store={store}>
-      <div>
+      <Fragment>
         <Header />
         <Home />
-      </div>
+      </Fragment>
     </Provider>
   </BrowserRouter>,
   homeContainer
