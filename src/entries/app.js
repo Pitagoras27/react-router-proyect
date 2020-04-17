@@ -9,6 +9,9 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { BrowserRouter } from 'react-router-dom';
+
+import Header from '../pages/components/header'
+
 // function logger({ getState, dispatch}) {
 //   return (next) => {
 //     return (action) => {
@@ -50,7 +53,10 @@ render(
     basename="/videos"
   >
     <Provider store={store}>
-      <Home />
+      <div>
+        <Header />
+        <Home />
+      </div>
     </Provider>
   </BrowserRouter>,
   homeContainer
