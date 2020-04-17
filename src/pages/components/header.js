@@ -5,7 +5,6 @@ import logo from '../../../images/logo.png';
 
 class Header extends Component {
   render() {
-    console.log("on Header!!")
     return (
       <header className="Header">
         <img src={logo} width={250}/>
