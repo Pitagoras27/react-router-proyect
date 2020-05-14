@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { render } from 'react-dom';
-import Home from '../pages/containers/home';
+import Home from '../pages/components/home';
+import Videos from '../pages/containers/videos';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reducer from '../reducers/index';
@@ -8,7 +9,7 @@ import { Map as map } from 'immutable';
 import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
 import Header from '../pages/components/header'
 
@@ -53,7 +54,16 @@ render(
     <Provider store={store}>
       <Fragment>
         <Header />
-        <Home />
+        <Route 
+          path='/'
+          exact
+          component={Home}
+        />
+        <Route 
+          path='/videos'
+          exact
+          component={() =>(<Videos />)}
+        />
       </Fragment>
     </Provider>
   </BrowserRouter>,
