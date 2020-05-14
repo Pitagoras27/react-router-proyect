@@ -68,9 +68,7 @@ render(
             component={() =>(<Videos />)}
           />
           <Redirect from='/v' to='/videos' />
-          <Route>
-            <NotFound />
-          </Route>
+          <Route component={NotFound} />
         </Switch>
       </Fragment>
     </Provider>
