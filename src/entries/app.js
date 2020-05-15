@@ -65,7 +65,7 @@ render(
             exact
             strict
             path='/videos'
-            component={() =>(<Videos />)}
+            component={Videos}
           />
           <Redirect from='/v' to='/videos' />
           <Route component={NotFound} />
