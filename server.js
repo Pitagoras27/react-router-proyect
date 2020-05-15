@@ -30,6 +30,7 @@ app.get('*', (req, res) => {
     </head>
     <body>
         <div id="home-container">${html}</div>
+        <script src="/js/app.js"></script>
     </body>
     </html>
   `)
