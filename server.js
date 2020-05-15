@@ -6,6 +6,8 @@ import reactDOMServer from 'react-dom/server';
 
 var app = express();
 
+app.use(express.static('dist'));
+
 app.get('*', (req, res) => {
   const html = reactDOMServer.renderToString(
     <StaticRouter
@@ -23,6 +25,7 @@ app.get('*', (req, res) => {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/app.css">
         <title>Document</title>
     </head>
     <body>
