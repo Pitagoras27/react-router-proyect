@@ -1,10 +1,10 @@
 import express from 'express';
-import App from '../dist/ssr/app';
+import React from 'react';
+import App from './dist/ssr/app';
 import { StaticRouter } from 'react-router/';
 import reactDOMServer from 'react-dom/server';
 
 var app = express();
-
 const html = reactDOMServer.renderToString(
   <StaticRouter>
     <App />
