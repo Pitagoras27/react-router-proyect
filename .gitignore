@@ -2,3 +2,4 @@ node_modules
 platzi-video
 package-lock.json
 react-router.code-workspace
+dist
