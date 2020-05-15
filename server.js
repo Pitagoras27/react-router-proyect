@@ -7,6 +7,7 @@ import reactDOMServer from 'react-dom/server';
 var app = express();
 
 app.use(express.static('dist'));
+app.use('/images', express.static('images'));
 
 app.get('*', (req, res) => {
   const html = reactDOMServer.renderToString(
